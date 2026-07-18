@@ -734,13 +734,13 @@ y_{zi}[n]=\left[\left(\frac{1}{2}\right)^n-\frac{1}{4}\left(\frac{1}{4}\right)^n
 \]
 
 零状态：激励 $x[n]=(1/2)^n u[n]$，$-1$ 为单根，设特解 $An(1/2)^n$，代入得 $A=2$，即 $y_{zs,p}=2n(1/2)^n$。
-由 $y[-1]=y[-2]=0$ 定齐次系数：
+由 $y_{zs}[-1]=y_{zs}[-2]=0$ 递推得 $y_{zs}[0]=1$，$y_{zs}[1]=\frac{5}{4}$；代入通解定齐次系数，得 $C_3=0$，$C_4=1$：
 \[
-y_{zs}[n]=\left[2n\left(\frac{1}{2}\right)^n-2\left(\frac{1}{2}\right)^n+2\left(\frac{1}{4}\right)^n\right]u[n].
+y_{zs}[n]=\left[2n\left(\frac{1}{2}\right)^n+\left(\frac{1}{4}\right)^n\right]u[n].
 \]
 全响应
 \[
-y[n]=y_{zi}+y_{zs}=\left[(2n-1)\left(\frac{1}{2}\right)^n+\frac{7}{4}\left(\frac{1}{4}\right)^n\right]u[n].
+y[n]=y_{zi}+y_{zs}=\left[(2n+1)\left(\frac{1}{2}\right)^n+\frac{3}{4}\left(\frac{1}{4}\right)^n\right]u[n].
 \]
 
 \textbf{(b)} 取单边 $Z$ 变换：$(1-\frac{3}{4}z^{-1}+\frac{1}{8}z^{-2})Y(z)=X(z)+y[-1]-\frac{3}{4}y[-1]z^{-1}+\frac{1}{8}(y[-1]z^{-1}+y[-2]z^{-2})$，展开后与 (a) 一致。
@@ -783,7 +783,8 @@ h[n]=\left[2\left(\frac{1}{2}\right)^n-\left(\frac{1}{4}\right)^n\right]u[n].
 h[n]=\left[(0.6)^n+\frac{n}{6}(0.6)^n\right]u[n]=\left(1+\frac{n}{6}\right)(0.6)^n u[n].
 \]
 
-\textbf{(c)} $Y(z)=\dfrac{z^2}{(z-1)(z-0.6)^2}$，$y[n]$ 含 $(0.6)^n$ 与常数项；因 $|0.6|<1$，$y[\infty]=1$（终值定理 $y[\infty]=\lim_{z\to1}(z-1)Y(z)=1$）。
+\textbf{(c)} $Y(z)=H(z)X(z)=\dfrac{z^2(z-0.5)}{(z-1)(z-0.6)^2}$，$y[n]$ 含 $(0.6)^n$ 与常数项；因 $|0.6|<1$，由终值定理
+$y[\infty]=\lim_{z\to1}(z-1)Y(z)=\dfrac{1\cdot(1-0.5)}{(1-0.6)^2}=3.125$（亦等于直流增益 $H(1)$）。
 
 \subsection*{题20}
 
